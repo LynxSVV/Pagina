@@ -1,0 +1,64 @@
+/* Estilos para el footer */
+footer {
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1a1a1a, #6200ff, #00aaff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animación del degradado */
+    transition: background-color 1s ease; /* Transición más suave */
+}
+
+/* Contenedor de redes sociales en el footer */
+.contenedor-footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Padding interno */
+    color: white;
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenido del footer */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Margen derecho */
+    text-align: center;
+    font-size: 12px; /* Tamaño de fuente */
+}
+
+/* Estilos para redes sociales */
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 12px; /* Tamaño de fuente */
+}
+
+.redes-sociales a {
+    margin-left: 15px; /* Margen entre íconos */
+    font-size: 35px; /* Tamaño de los íconos de redes sociales */
+}
+
+/* Estilos para los párrafos en el footer */
+.footer-content p {
+    margin: 3px 0; /* Espaciado vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Margen derecho */
+    text-align: center;
+    font-size: 12px; /* Tamaño de fuente */
+}
+
+/* Animación de aparición para los párrafos */
+footer p {
+    animation: fadeIn 0.5s ease forwards; /* Animación de aparición */
+    margin: 0; /* Sin margen */
+    animation: fadeIn 0.5s ease forwards; /* Animación de aparición */
+}
+

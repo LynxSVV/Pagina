@@ -1,0 +1,169 @@
+:root {
+    --color-fondo: #e7f3ff;
+    --color-texto: #ffffff;
+    --color-principal: #6200ff; /* Color principal para elementos */
+    --color-hover: #f0f0f0; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos generales del body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo); /* Fondo general */
+}
+
+/* Estilos para el header */
+header {
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1a1a1a, #6200ff, #00aaff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animación del degradado */
+    transition: background-color 1s ease; /* Transición más suave */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.contenedorCabecera {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    width: 180px;
+    margin-right: 20px;
+}
+
+.tituloPortafolio {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative; /* Necesario para la posición absoluta de la barra */
+    padding-bottom: 10px;
+}
+
+.tituloPortafolio::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Empieza en la izquierda del título */
+    bottom: -15px; /* Aumenta este valor para mover la barra hacia abajo */
+    height: 3px; /* Altura de la barra */
+    width: 80%; /* Ancho inicial de la barra */
+    background-color: var(--color-texto); /* Color de la barra */
+    animation: moveAndBounce 4s ease infinite; /* Animación de movimiento y rebote */
+}
+
+@keyframes moveAndBounce {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la vista a la izquierda */
+        width: 80%; /* Ancho inicial */
+    }
+    10% {
+        transform: translateX(0); /* Se mueve al inicio */
+        width: 80%; /* Ancho completo */
+    }
+    50% {
+        transform: translateX(40%); /* Se mueve a la mitad del ancho del título */
+        width: 5%; /* Ancho reducido */
+    }
+    75% {
+        transform: translateX(0); /* Regresa al centro */
+        width: 5%; /* Mantiene el ancho reducido */
+    }
+    100% {
+        transform: translateX(-100%); /* Vuelve a la posición inicial */
+        width: 80%; /* Regresa al ancho inicial */
+    }
+}
+
+.tituloPortafolio:hover {
+    transform: scale(1.05);
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00; /* Color al pasar el mouse */
+}
+
+/* Estilos para la Sidebar */
+.sidebar {
+    width: 280px; /* Ancho del menú lateral */
+    background-color: #ffffff; /* Color de fondo del menú lateral */
+    border-right: 2px solid var(--color-principal); /* Color del borde derecho */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    position: fixed; /* Fija el menú lateral en la pantalla */
+    top: 0; /* Posiciona el menú desde la parte superior */
+    left: -280px; /* Comienza fuera de la vista a la izquierda */
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    overflow-y: auto; /* Permite el desplazamiento si hay mucho contenido */
+    transition: left 0.3s ease-in-out; /* Transición suave para mostrar/ocultar */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.sidebar.active {
+    left: 0; /* Mueve el menú a la vista */
+}
+
+.sidebar header {
+    background-color: var(--color-principal); /* Color de fondo del encabezado */
+    color: white; /* Color del texto */
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+}
+
+.close-button {
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilos para los enlaces de la sidebar */
+.sidebar .menu a {
+    display: block; /* Hace que cada enlace ocupe todo el ancho */
+    padding: 15px; /* Espaciado interno para cada enlace */
+    color: var(--color-principal); /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria entre elementos */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+}
+
+.sidebar .menu a:hover {
+    background-color: var(--color-hover); /* Color de fondo al pasar el mouse */
+}
